@@ -308,7 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 428668270}
-  minimumDistance: 6
+  minDist: 14
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &125429289
@@ -501,7 +501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 240283914}
-  minimumDistance: 6
+  minDist: 10
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &160754785
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 11787031}
-  minimumDistance: 6
+  minDist: 10
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &681310361
@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 1167963059}
-  minimumDistance: 6
+  minDist: 10
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &956629272

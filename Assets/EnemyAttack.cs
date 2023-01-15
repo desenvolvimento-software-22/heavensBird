@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
     public GameObject projectile;
     public float cooldown;
     private float lastShot;
+    private float lastAttack;
     public float strength = 70.0f;
 
     void Start()
@@ -25,13 +26,19 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         float difference = Mathf.Abs(player.position.x - enemy.position.x);
-        if (difference >= 5 && difference <= 10  && Mathf.Abs(player.position.y - enemy.position.y) < 1)
+        if (enemy.GetComponent<EnemyMovement>().inRange() && difference >= 8f)
         {
             Shoot();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision) 
     {
+        if (Time.time - lastAttack < cooldown)
+        {
+            return;
+        }
+        lastAttack = Time.time;
+
         if (collision.gameObject.tag == "Player")
         {
             Attack();
@@ -59,7 +66,6 @@ public class EnemyAttack : MonoBehaviour
         }
         anim.SetTrigger("Attack");
         player.AddForce(new Vector3(difference, 0, 0) * strength, ForceMode2D.Impulse);
-        enemy.AddForce(new Vector3(-difference, 0, 0) * strength, ForceMode2D.Impulse);
     }
 
     void Shoot()
@@ -70,6 +76,6 @@ public class EnemyAttack : MonoBehaviour
         }
         lastShot = Time.time;
         anim.SetTrigger("Shoot");
-        Instantiate(projectile, firePoint.position, firePoint.rotation);
+        Instantiate(projectile, firePoint.position, Quaternion.identity);
     }
 }
