@@ -17,17 +17,20 @@ public class Dash : MonoBehaviour
     private float dashDuration;
     private float contDash;
     private Direction direction;
+    
     [SerializeField]
     private float dashCooldown;
-    private float cooldown;
+    private float contTimeB4Use;
 
     private bool canDash;
+    [SerializeField]
+    private Animator animator;
 
     void Start()
     {
         this.isDashing = false;
         this.contDash = 0;
-        this.cooldown = 0;
+        this.contTimeB4Use = 0;
         this.canDash = true;
 
     }
@@ -40,6 +43,7 @@ public class Dash : MonoBehaviour
             if (this.contDash >= this.dashDuration) {
                 this.contDash = 0;
                 this.isDashing = false;
+                this.animator.SetBool("dash", false);
             } 
             else {
                 if (this.direction == Direction.Right){
@@ -52,9 +56,9 @@ public class Dash : MonoBehaviour
         }    
         else {
             if (!this.canDash) {
-                this.dashCooldown += Time.deltaTime;
-                if (this.dashCooldown >= this.cooldown) {
-                    this.dashCooldown = 0;
+                this.contTimeB4Use += Time.deltaTime;
+                if (this.contTimeB4Use >= this.dashCooldown) {
+                    this.contTimeB4Use = 0;
                     this.canDash = true;
                 }
             }
@@ -70,6 +74,7 @@ public class Dash : MonoBehaviour
             this.direction = directionDash;
             this.isDashing = true;
             this.canDash = false;
+            this.animator.SetBool("dash", true);
         }
         
 

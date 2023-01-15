@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7585a9a8f4697b54485968fb8919edb7
+guid: 2458dc349ac819a4984bce57ea800347
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dash_right_0
+      name: dash_direita_0
       rect:
         serializedVersion: 2
         x: 42
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae1fdba5a1f12b849bdd954c289564f0
-      internalID: 760950191
+      spriteID: 492438a00ea51884b96ccde62d18a80f
+      internalID: 1813646865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_1
+      name: dash_direita_1
       rect:
         serializedVersion: 2
         x: 108
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9576947c4a8f12b4889481515f45141c
-      internalID: -927593324
+      spriteID: 6cd6fba9f7a692a46b47f58dcce48caa
+      internalID: -1985662397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_2
+      name: dash_direita_2
       rect:
         serializedVersion: 2
         x: 179
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f356394b818875943a0213c0dd2923a9
-      internalID: -575399231
+      spriteID: 653684c8c8fe8b8469e52533be8398c4
+      internalID: 1784709095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_3
+      name: dash_direita_3
       rect:
         serializedVersion: 2
         x: 256
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0004a852021195a4cafdf72b4a83b7f5
-      internalID: 1860392760
+      spriteID: 9aac0b14af5c0b245a7bb2b65498c892
+      internalID: 1606896651
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_4
+      name: dash_direita_4
       rect:
         serializedVersion: 2
         x: 326
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05ce90d3fe646f7409de8fc76f71c1f1
-      internalID: 1267604465
+      spriteID: f094cf854b0c0cd4bb1905bd53aa1a9c
+      internalID: -2009712443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_5
+      name: dash_direita_5
       rect:
         serializedVersion: 2
         x: 399
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d34e8b22a6e362943aecefd6fad4fb1e
-      internalID: -843036597
+      spriteID: 5c864837e7c94044dbf34eaa679f42f3
+      internalID: -664547584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_6
+      name: dash_direita_6
       rect:
         serializedVersion: 2
         x: 471
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0009abf82f652cd47a7e350d8cc51964
-      internalID: 1391555905
+      spriteID: eb60a09395d6ae041936410d8b1a98d5
+      internalID: -1927031614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_7
+      name: dash_direita_7
       rect:
         serializedVersion: 2
         x: 540
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae77155afd24466439564dc6470b5a0e
-      internalID: 1150966774
+      spriteID: 25852e7520a1c4c459ffd1732fce640d
+      internalID: -47634549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dash_right_8
+      name: dash_direita_8
       rect:
         serializedVersion: 2
         x: 610
@@ -287,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebdc7a32e7b52e943be634b2ab66362e
-      internalID: 1346119413
+      spriteID: 09f63f5cbbd18ad4899395de26d5a6eb
+      internalID: 1970819177
       vertices: []
       indices: 
       edges: []
@@ -304,15 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dash_right_2: -575399231
-      dash_right_8: 1346119413
-      dash_right_4: 1267604465
-      dash_right_1: -927593324
-      dash_right_0: 760950191
-      dash_right_3: 1860392760
-      dash_right_5: -843036597
-      dash_right_7: 1150966774
-      dash_right_6: 1391555905
+      dash_direita_8: 1970819177
+      dash_direita_0: 1813646865
+      dash_direita_6: -1927031614
+      dash_direita_4: -2009712443
+      dash_direita_3: 1606896651
+      dash_direita_2: 1784709095
+      dash_direita_7: -47634549
+      dash_direita_1: -1985662397
+      dash_direita_5: -664547584
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
