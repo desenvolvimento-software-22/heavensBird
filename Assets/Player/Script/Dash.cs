@@ -11,6 +11,7 @@ public class Dash : MonoBehaviour
     [SerializeField]
     private float velocity;
 
+    private const int ParticleVel = 5;
     private bool isDashing;
 
     [SerializeField]
@@ -25,6 +26,11 @@ public class Dash : MonoBehaviour
     private bool canDash;
     [SerializeField]
     private Animator animator;
+    
+    [SerializeField]
+    private ParticleSystem particles;
+    private ParticleSystem.MainModule particleMainModule;
+    private ParticleSystemRenderer particlesRenderer;
 
     void Start()
     {
@@ -32,6 +38,9 @@ public class Dash : MonoBehaviour
         this.contDash = 0;
         this.contTimeB4Use = 0;
         this.canDash = true;
+        this.particles.Stop();
+        this.particleMainModule = this.particles.main;
+        this.particlesRenderer = this.particles.GetComponent<ParticleSystemRenderer>();
 
     }
 
@@ -44,13 +53,18 @@ public class Dash : MonoBehaviour
                 this.contDash = 0;
                 this.isDashing = false;
                 this.animator.SetBool("dash", false);
+                this.particles.Stop();
             } 
             else {
                 if (this.direction == Direction.Right){
                     this.rgdbd.velocity = new Vector2(this.velocity, 0);
+                    this.particleMainModule.startSpeed = ParticleVel;
+                    this.particlesRenderer.flip = Vector3.zero; //(0,0,0)
                 } 
                 else {
                     this.rgdbd.velocity = new Vector2(-this.velocity, 0);
+                    this.particleMainModule.startSpeed = -ParticleVel;
+                    this.particlesRenderer.flip = Vector3.right; //(1,0,0)
                 }
             }
         }    
@@ -75,6 +89,7 @@ public class Dash : MonoBehaviour
             this.isDashing = true;
             this.canDash = false;
             this.animator.SetBool("dash", true);
+            this.particles.Play();
         }
         
 

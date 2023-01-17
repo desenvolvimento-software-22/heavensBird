@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // essa variável serve para controlar a velocidade na qual o personagem se movimenta
-    public float Speed;
+    public float speed;
+    public SpriteRenderer spriteRenderer;
     
     // essa variável serve para controlarmos a gravidade do personagem
     private Rigidbody2D rig;
     private Animator anim;
+    
     // essa variável serve para controlarmos a força do pulo na própria Unity
     public float JumpForce;
     public bool isJumping;
@@ -41,7 +43,28 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+       float horizontal = Input.GetAxis("Horizontal");
+       Vector2 velocidade = this.rig.velocity;
+       velocidade.x = horizontal * this.speed;
+       this.rig.velocity = velocidade;
+       
+       if (velocidade.x > 0) {
+        //Direita
+        this.spriteRenderer.flipX = false;
+        anim.SetBool("run", true);
+        this.direction = Direction.Right;
+       } else if (velocidade.x < 0) {
+        //Esquerda
+        anim.SetBool("run", true);
+        this.spriteRenderer.flipX = true;
+        this.direction = Direction.Left;
+       } else if (velocidade.x == 0) {
+        anim.SetBool("run", false);
+       }
+       
+       
+       
+        /* Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * Speed;
         
         if(Input.GetAxis("Horizontal") > 0f)
@@ -61,7 +84,7 @@ public class Player : MonoBehaviour
         if(Input.GetAxis("Horizontal") == 0f)
         {
             anim.SetBool("run", false);
-        }
+        } */
     }
 
     void Jump()
