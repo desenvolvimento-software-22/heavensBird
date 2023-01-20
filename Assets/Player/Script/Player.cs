@@ -19,7 +19,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Dash dash;
 
+    // Variaveis de ataque da personagem
     private Direction direction;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public float attackDamage = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -115,7 +120,18 @@ public class Player : MonoBehaviour
     {
          if (Input.GetButtonDown("Fire1"))
         {
+            // Animação de ataque
             anim.SetTrigger("attack");
+            
+            // Detect enemies in range
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            // Damage enemies
+            foreach(Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<healthEnemy>().TakeDamage(attackDamage);
+
+            }
         }
     }
     private void DashAplic(){
@@ -124,4 +140,14 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    //Raio do dano do ataque
+    void OnDrawGizmosSelected() 
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);    
+    }
+
 }
