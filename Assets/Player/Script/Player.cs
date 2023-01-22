@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
         if(collision.gameObject.layer == 7)
         {
             Destroy(gameObject);
-            Debug.Log("Tocando o void.");
+            //Debug.Log("Tocando o void.");
         }
     }
 
