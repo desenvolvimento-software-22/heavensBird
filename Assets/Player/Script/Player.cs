@@ -19,8 +19,19 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Dash dash;
 
+    // Variaveis de ataque da personagem
     private Direction direction;
     public bool isAlive = true;
+    public Transform attackPoint;
+    public Transform attackPoint_esquerda;
+    private bool swordSide = true; 
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public float attackDamage = 1f;
+
+    //Tempo de ataque
+    public float attackRate = 2f;
+    private float nextAttackTime = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -56,11 +67,19 @@ public class Player : MonoBehaviour
         this.spriteRenderer.flipX = false;
         anim.SetBool("run", true);
         this.direction = Direction.Right;
+
+        //Verificar para qual lado o personagem ataca
+        swordSide = true;
+
        } else if (velocidade.x < 0) {
         //Esquerda
         anim.SetBool("run", true);
         this.spriteRenderer.flipX = true;
         this.direction = Direction.Left;
+
+        //Verificar para qual lado o personagem ataca
+        swordSide = false;
+
        } else if (velocidade.x == 0) {
         anim.SetBool("run", false);
        }
@@ -104,6 +123,13 @@ public class Player : MonoBehaviour
             isJumping = false;
             anim.SetBool("jump", false);
         }
+
+        //Função temporária teste para a morte da personagem no void
+        if(collision.gameObject.layer == 7)
+        {
+            Destroy(gameObject);
+            //Debug.Log("Tocando o void.");
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
@@ -115,9 +141,41 @@ public class Player : MonoBehaviour
     }
     void Attack()
     {
-         if (Input.GetButtonDown("Fire1"))
+        if (Time.time >= nextAttackTime)
         {
-            anim.SetTrigger("attack");
+            if (Input.GetButtonDown("Fire1"))
+            {
+                // Animação de ataque
+                anim.SetTrigger("attack");
+
+
+                if (swordSide == true)
+                {
+                    // Detect enemies in range
+                    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+                    // Damage enemies
+                    foreach(Collider2D enemy in hitEnemies)
+                    {
+                        enemy.GetComponent<healthEnemy>().TakeDamage(attackDamage);
+
+                    }
+                }
+                else
+                {
+                    // Detect enemies in range
+                    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint_esquerda.position, attackRange, enemyLayers);
+
+                    // Damage enemies
+                    foreach(Collider2D enemy in hitEnemies)
+                    {
+                        enemy.GetComponent<healthEnemy>().TakeDamage(attackDamage);
+
+                    }
+                }
+
+                nextAttackTime = Time.time + 1f/attackRate;
+            }
         }
     }
     private void DashAplic(){
@@ -126,5 +184,14 @@ public class Player : MonoBehaviour
 
         }
     }
-    
+
+    //Raio do dano do ataque
+    void OnDrawGizmosSelected() 
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);    
+    }
+
 }
