@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float projectileSpeed;
+    private float timer;
     private GameObject player;
     private Rigidbody2D rb;
     Vector3 direction;
@@ -18,16 +19,23 @@ public class Projectile : MonoBehaviour
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rot + 180);
     }
+    // Update is called once per frame
     private void Update()
     {
         rb.velocity = new Vector2(direction.x / Mathf.Abs(direction.x), 0) * projectileSpeed;
-    }
-    // Update is called once per frame
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        timer += Time.deltaTime;
+        if (timer > 12)
         {
             Destroy(gameObject);
         }
+    }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }
