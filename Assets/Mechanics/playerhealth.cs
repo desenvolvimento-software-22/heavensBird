@@ -8,7 +8,7 @@ public class playerhealth : MonoBehaviour
     public int health;
 
     public SpriteRenderer PlayerSr;
-    public PlayerMovement playerMovement;
+    public Player playerMovement;
     // Start is called before the first frame update
     void Start()
     {
