@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
     public float speed;
     public SpriteRenderer spriteRenderer;
     
+    //controlar audios
+    public AudioSource jumpSound;
+    public AudioSource attackSoundVoice;
+    public AudioSource attackSoundSword;
+    
     // essa variável serve para controlarmos a gravidade do personagem
     private Rigidbody2D rig;
     private Animator anim;
@@ -82,7 +87,6 @@ public class Player : MonoBehaviour
        }
        
        
-       
         /* Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * Speed;
         
@@ -112,6 +116,7 @@ public class Player : MonoBehaviour
         {
             rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
+            jumpSound.Play();
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -145,7 +150,8 @@ public class Player : MonoBehaviour
             {
                 // Animação de ataque
                 anim.SetTrigger("attack");
-
+                attackSoundVoice.Play();
+                attackSoundSword.Play();
 
                 if (swordSide == true)
                 {
@@ -176,6 +182,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+    //metodo para aplicação do dash
     private void DashAplic(){
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             this.dash.Aplicate(this.direction);
