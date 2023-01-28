@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public float JumpForce;
     public bool isJumping;
     //
-    [SerializeField]
+    [SerializeField] 
     private Dash dash;
 
     // Variaveis de ataque da personagem
