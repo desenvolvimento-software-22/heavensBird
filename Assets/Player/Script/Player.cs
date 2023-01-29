@@ -16,11 +16,12 @@ public class Player : MonoBehaviour
     public float JumpForce;
     public bool isJumping;
     //
-    [SerializeField]
+    [SerializeField] 
     private Dash dash;
 
     // Variaveis de ataque da personagem
     private Direction direction;
+    public bool isAlive = true;
     public Transform attackPoint;
     public Transform attackPoint_esquerda;
     private bool swordSide = true; 
@@ -54,6 +55,8 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+       if (isAlive)
+       {
        float horizontal = Input.GetAxis("Horizontal");
        Vector2 velocidade = this.rig.velocity;
        velocidade.x = horizontal * this.speed;
@@ -80,8 +83,7 @@ public class Player : MonoBehaviour
        } else if (velocidade.x == 0) {
         anim.SetBool("run", false);
        }
-       
-       
+       }
        
         /* Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         transform.position += movement * Time.deltaTime * Speed;
