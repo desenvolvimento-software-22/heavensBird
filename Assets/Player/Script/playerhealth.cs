@@ -12,14 +12,17 @@ public class playerhealth : MonoBehaviour
     public Player playerMovement;
     private Animator anim;
     public bool isAlive = true;
-    public Rigidbody2D rb2;
-
+    public Rigidbody2D rb;
+    public SpriteRenderer spriteRenderer;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
      }
 
      public void CooldownStart()
@@ -40,18 +43,11 @@ public class playerhealth : MonoBehaviour
             if(health <= 0)
             {
             isAlive = false;
-            anim.SetTrigger("death");
-            Invoke ("ReloadLevel", 3f);
-            OnCollisionEnter2D();
+            anim.SetBool("death", true);
+            rb.bodyType = RigidbodyType2D.Static;
+            this.GetComponent<Player>().enabled=false;
+            Invoke ("ReloadLevel", 2f);
             }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(health <=0)
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        }
-    }
-
      }
      void ReloadLevel()
      {
@@ -59,15 +55,3 @@ public class playerhealth : MonoBehaviour
      }
 }
         
-        
-        
-       
-        
-    
-
-//     // Update is called once per frame
-//     void Update()
-//     {
-        
-//     }
-// }

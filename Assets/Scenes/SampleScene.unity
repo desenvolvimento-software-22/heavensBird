@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Playerhealth: {fileID: 1239619004}
   damage: 1
+  rig: {fileID: 0}
 --- !u!1 &160754778
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Playerhealth: {fileID: 1239619004}
   damage: 1
+  rig: {fileID: 0}
 --- !u!1 &164658008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Playerhealth: {fileID: 1239619004}
   damage: 1
+  rig: {fileID: 0}
 --- !u!1 &721251146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2229,6 +2232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Playerhealth: {fileID: 1239619004}
   damage: 1
+  rig: {fileID: 0}
 --- !u!1 &956789011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3345,7 +3349,8 @@ MonoBehaviour:
   PlayerSr: {fileID: 0}
   playerMovement: {fileID: 0}
   isAlive: 1
-  rb2: {fileID: 0}
+  rb: {fileID: 0}
+  spriteRenderer: {fileID: 0}
 --- !u!1 &1314006546
 GameObject:
   m_ObjectHideFlags: 0
