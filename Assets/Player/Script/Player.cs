@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
     //Tempo de ataque
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
-
     // Start is called before the first frame update
     void Start()
     {
