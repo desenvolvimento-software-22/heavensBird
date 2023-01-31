@@ -14,7 +14,7 @@ public class playerhealth : MonoBehaviour
     public bool isAlive = true;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
-    
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +46,12 @@ public class playerhealth : MonoBehaviour
             anim.SetBool("death", true);
             rb.bodyType = RigidbodyType2D.Static;
             this.GetComponent<Player>().enabled=false;
-            Invoke ("ReloadLevel", 2f);
+            Invoke ("LoadGameOver", 2f);
             }
      }
-     void ReloadLevel()
+     void LoadGameOver()
      {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
      }
 }
         
