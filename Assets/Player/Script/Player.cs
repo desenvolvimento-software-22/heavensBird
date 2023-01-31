@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public AudioSource attackSoundVoice;
     public AudioSource attackSoundSword;
     
+    
     // essa variável serve para controlarmos a gravidade do personagem
     private Rigidbody2D rig;
     private Animator anim;

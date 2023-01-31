@@ -7,7 +7,9 @@ public class playerhealth : MonoBehaviour
 {
     public int maxHealth = 3;
     public int health;
-
+    
+    public AudioSource damageSound;
+    
     public SpriteRenderer PlayerSr;
     public Player playerMovement;
     private Animator anim;
@@ -32,8 +34,10 @@ public class playerhealth : MonoBehaviour
      IEnumerator CooldownCoroutine()
      {
          anim.SetBool("damage", true);
+         damageSound.Play();
          yield return new WaitForSeconds(0.2f);
          anim.SetBool("damage", false);
+         //damageSound.Stop();
      }
      public void takeDamage(int damage){
 
