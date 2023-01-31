@@ -408,6 +408,8 @@ GameObject:
   - component: {fileID: 125429285}
   - component: {fileID: 125429284}
   - component: {fileID: 125429283}
+  - component: {fileID: 125429292}
+  - component: {fileID: 125429291}
   m_Layer: 3
   m_Name: Slime (1)
   m_TagString: Untagged
@@ -616,6 +618,36 @@ MonoBehaviour:
   Playerhealth: {fileID: 0}
   damage: 1
   rig: {fileID: 0}
+--- !u!114 &125429291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125429281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33078d867527d0f4cbcb1c846c9a6638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Playerhealth: {fileID: 1239619004}
+  damage: 1
+  rig: {fileID: 0}
+--- !u!114 &125429292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125429281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9be758bdc8480c4d900826d9f3576e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 3
+  recuoVelocidade: 500
 --- !u!1 &160754778
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +665,7 @@ GameObject:
   - component: {fileID: 160754780}
   - component: {fileID: 160754786}
   - component: {fileID: 160754787}
+  - component: {fileID: 160754788}
   m_Layer: 3
   m_Name: Slime
   m_TagString: Untagged
@@ -838,9 +871,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33078d867527d0f4cbcb1c846c9a6638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playerhealth: {fileID: 0}
+  Playerhealth: {fileID: 1239619004}
   damage: 1
   rig: {fileID: 0}
+--- !u!114 &160754788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160754778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9be758bdc8480c4d900826d9f3576e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 3
+  recuoVelocidade: 500
 --- !u!114 &161290706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,7 +1400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1951,6 +1999,7 @@ GameObject:
   - component: {fileID: 681310356}
   - component: {fileID: 681310355}
   - component: {fileID: 681310362}
+  - component: {fileID: 681310363}
   m_Layer: 3
   m_Name: Slime (2)
   m_TagString: Enemy
@@ -2159,6 +2208,21 @@ MonoBehaviour:
   health: 0
   maxHealth: 3
   recuoVelocidade: 500
+--- !u!114 &681310363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681310353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33078d867527d0f4cbcb1c846c9a6638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Playerhealth: {fileID: 1239619004}
+  damage: 1
+  rig: {fileID: 0}
 --- !u!213 &831909242
 Sprite:
   m_ObjectHideFlags: 0
@@ -2627,7 +2691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47071144, y: 0.44200003}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -414.29, y: 180.00998}
+  m_AnchoredPosition: {x: -409, y: 153.83}
   m_SizeDelta: {x: 21.21, y: 20.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &956629264
@@ -2647,6 +2711,7 @@ GameObject:
   - component: {fileID: 956629267}
   - component: {fileID: 956629266}
   - component: {fileID: 956629273}
+  - component: {fileID: 956629274}
   m_Layer: 3
   m_Name: Slime (3)
   m_TagString: Untagged
@@ -2855,6 +2920,21 @@ MonoBehaviour:
   health: 0
   maxHealth: 3
   recuoVelocidade: 500
+--- !u!114 &956629274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956629264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33078d867527d0f4cbcb1c846c9a6638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Playerhealth: {fileID: 1239619004}
+  damage: 1
+  rig: {fileID: 0}
 --- !u!1 &956789011
 GameObject:
   m_ObjectHideFlags: 0
@@ -3319,6 +3399,7 @@ Transform:
   - {fileID: 1950384969}
   - {fileID: 463748398}
   - {fileID: 429455650}
+  - {fileID: 1898180833}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3361,12 +3442,12 @@ MonoBehaviour:
   isJumping: 0
   dash: {fileID: 1239619000}
   isAlive: 1
-  attackPoint: {fileID: 0}
-  attackPoint_esquerda: {fileID: 0}
+  attackPoint: {fileID: 463748398}
+  attackPoint_esquerda: {fileID: 1898180833}
   attackRange: 0.5
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   attackDamage: 1
   attackRate: 2
 --- !u!95 &1239618999
@@ -3441,8 +3522,8 @@ MonoBehaviour:
   fullHeart: {fileID: 1001977939, guid: 7f3e44d77dc37364fa40730bc887fe60, type: 3}
   hearts:
   - {fileID: 892109131}
-  - {fileID: 1734572047}
   - {fileID: 1314006548}
+  - {fileID: 1734572047}
   Playerhealth: {fileID: 1239619004}
 --- !u!114 &1239619004
 MonoBehaviour:
@@ -3463,6 +3544,7 @@ MonoBehaviour:
   isAlive: 1
   rb: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &1314006546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3498,7 +3580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47071144, y: 0.44200003}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -350.59, y: 180.00998}
+  m_AnchoredPosition: {x: -349.3, y: 153.83}
   m_SizeDelta: {x: 22.38, y: 20.762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1314006548
@@ -9891,7 +9973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.47071144, y: 0.44200003}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -288.56, y: 180.00998}
+  m_AnchoredPosition: {x: -289.2, y: 153.84}
   m_SizeDelta: {x: 21.47, y: 20.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1819768963
@@ -9994,6 +10076,37 @@ MonoBehaviour:
   parallaxEffectMultiplier: {x: 0.3, y: 0}
   infiniteHorizontal: 0
   infiniteVertical: 0
+--- !u!1 &1898180832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1898180833}
+  m_Layer: 0
+  m_Name: attackPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1898180833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898180832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.94, y: -0.07, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1239618995}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945352444
 GameObject:
   m_ObjectHideFlags: 0
