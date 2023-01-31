@@ -12,7 +12,7 @@ public class BossFight : MonoBehaviour
     private bool BossAlive = true;
     public float JumpForce = 200f, BossVelocity = 3f;
     private Vector3 distance;
-    private int Jumps = 0;
+    //private int Jumps = 0;
 
     //Variáveis do Tempo de CooldDown do Pulo
     public float nextJumpTime = 0f;
