@@ -9,6 +9,7 @@ public class playerhealth : MonoBehaviour
     public int health;
     
     public AudioSource damageSound;
+    public AudioSource gameOverSound;
     
     public SpriteRenderer PlayerSr;
     public Player playerMovement;
@@ -16,7 +17,7 @@ public class playerhealth : MonoBehaviour
     public bool isAlive = true;
     public Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
-    
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +38,7 @@ public class playerhealth : MonoBehaviour
          damageSound.Play();
          yield return new WaitForSeconds(0.2f);
          anim.SetBool("damage", false);
-         //damageSound.Stop();
+         
      }
      public void takeDamage(int damage){
 
@@ -48,14 +49,15 @@ public class playerhealth : MonoBehaviour
             {
             isAlive = false;
             anim.SetBool("death", true);
+            gameOverSound.Play();
             rb.bodyType = RigidbodyType2D.Static;
             this.GetComponent<Player>().enabled=false;
-            Invoke ("ReloadLevel", 2f);
+            Invoke ("LoadGameOver", 2f);
             }
      }
-     void ReloadLevel()
+     void LoadGameOver()
      {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
      }
 }
         
