@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
 
     // Variaveis de ataque da personagem
     private Direction direction;
+    public bool isAlive = true;
     public Transform attackPoint;
     public Transform attackPoint_esquerda;
     private bool swordSide = true; 
@@ -36,7 +38,6 @@ public class Player : MonoBehaviour
     //Tempo de ataque
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
 
     void Move()
     {
+
        float horizontal = Input.GetAxis("Horizontal");
        Vector2 velocidade = this.rig.velocity;
        velocidade.x = horizontal * this.speed;
@@ -86,28 +88,7 @@ public class Player : MonoBehaviour
         anim.SetBool("run", false);
        }
        
-       
-        /* Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += movement * Time.deltaTime * Speed;
-        
-        if(Input.GetAxis("Horizontal") > 0f)
-        {
-            anim.SetBool("run", true);
-            transform.eulerAngles = new Vector3(0f,0f,0f);
-            this.direction = Direction.Right;
-        }
 
-        if(Input.GetAxis("Horizontal") < 0f)
-        {
-            anim.SetBool("run", true);
-            transform.eulerAngles = new Vector3(0f,180f,0f);
-            this.direction = Direction.Left;
-        }
-        
-        if(Input.GetAxis("Horizontal") == 0f)
-        {
-            anim.SetBool("run", false);
-        } */
     }
 
     void Jump()
@@ -130,10 +111,15 @@ public class Player : MonoBehaviour
         //Função temporária teste para a morte da personagem no void
         if(collision.gameObject.layer == 7)
         {
-            Destroy(gameObject);
-            //Debug.Log("Tocando o void.");
+            Invoke("ReloadLevel", 0f);
         }
+            
     }
+
+     void ReloadLevel()
+     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
