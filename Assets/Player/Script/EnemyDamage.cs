@@ -7,6 +7,7 @@ public class EnemyDamage : MonoBehaviour
     public playerhealth Playerhealth;
     public int damage = 1;
     public Rigidbody2D rig;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class EnemyDamage : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Playerhealth.takeDamage(damage);
+            
         } 
     }
 }
