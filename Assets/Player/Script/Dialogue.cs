@@ -12,11 +12,14 @@ public class Dialogue : MonoBehaviour
     public float radious;
 
     private DialogueControl dc;
+    private Animator anim;
     bool onRadious;
+    private bool executar = true;
 
     private void Start()
     {
         dc = FindObjectOfType<DialogueControl>();
+        anim = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -26,9 +29,14 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && onRadious)
+        if(Input.GetKeyDown(KeyCode.Space) && onRadious && executar == true)
         {
             dc.Speech(profile, speechTxt, actorName);
+            executar = false;
+        }
+        if(executar == false)
+        {
+            KnightDeath(); 
         }
     }
 
@@ -49,5 +57,11 @@ public class Dialogue : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, radious);
+    }
+
+    public void KnightDeath()
+    {
+            anim.SetTrigger("deathk");
+            this.GetComponent<Dialogue>().enabled = false;
     }
 }

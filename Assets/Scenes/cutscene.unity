@@ -480,7 +480,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: c36b1a0f233464946b868e6cc469a238, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -823,26 +823,11 @@ MonoBehaviour:
   - "Provavelmente... voc\xEA dever\xE1 ser quem ir\xE1 trazer o equil\xEDbrio para
     este mundo!"
   - Pode ficar com a minha espada.
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   actorName: Onion Knight
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
-  radious: 2
+  radious: 4
 --- !u!1 &1276227449
 GameObject:
   m_ObjectHideFlags: 3
@@ -1031,7 +1016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1786371407
 MonoBehaviour:
   m_ObjectHideFlags: 0
