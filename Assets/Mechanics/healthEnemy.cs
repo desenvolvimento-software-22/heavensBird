@@ -24,6 +24,7 @@ public class healthEnemy : MonoBehaviour
         if (health <= 0)
         {
             animator.SetTrigger("isDead");
+            
         }
         else 
         {

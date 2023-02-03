@@ -32,7 +32,12 @@ public class BossFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (BossAlive == true)
+        if (this.GetComponent<healthEnemy>().health <= 0)
+        {
+            BossAlive = false;
+            this.enabled = false;
+        }
+        if (BossAlive)
         {
             //if (FightStart() == true)
             //{
@@ -101,7 +106,6 @@ public class BossFight : MonoBehaviour
             return;
         }
         lastShot = Time.time;
-        anim.SetFloat("RPos", distance.x);
         anim.SetTrigger("Shoot");
     }
 
