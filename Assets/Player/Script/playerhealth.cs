@@ -49,7 +49,7 @@ public class playerhealth : MonoBehaviour
             Invoke ("LoadGameOver", 2f);
             }
      }
-     void LoadGameOver()
+     public void LoadGameOver()
      {
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
      }

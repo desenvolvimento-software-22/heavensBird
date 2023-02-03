@@ -71,6 +71,10 @@ public class BossFight : MonoBehaviour
 
         if (Time.time >= nextJumpTime)
         {
+
+            // Animação de pulo
+            anim.SetTrigger("Jump");
+
             if (distance.x > 0f)
             {
                 Boss.AddForce(Vector2.up * JumpForce + Vector2.left * BossVelocity, ForceMode2D.Impulse);
