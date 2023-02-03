@@ -10,11 +10,12 @@ public class SceneChanger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D player)
     {
+        Debug.Log("Teste");
         //Debug.Log("Está em contato");
         if(player.CompareTag("Player"))
         {
             // Loading level with build index
-            //SceneManager.LoadScene(index);
+            SceneManager.LoadScene(index);
 
             Debug.Log("Está em contato");
 
