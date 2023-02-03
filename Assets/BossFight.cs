@@ -34,12 +34,12 @@ public class BossFight : MonoBehaviour
     {
         if (BossAlive == true)
         {
-            if (FightStart() == true)
-            {
-                
-                FirstRotation();
-                SecondRotation();
-            }
+            //if (FightStart() == true)
+            //{
+            
+            FirstRotation();
+            SecondRotation();
+            //}
         }
         else
         {
@@ -74,12 +74,12 @@ public class BossFight : MonoBehaviour
             if (distance.x > 0f)
             {
                 Boss.AddForce(Vector2.up * JumpForce + Vector2.left * BossVelocity, ForceMode2D.Impulse);
-                Debug.Log("Está adicionando força!");
+                //Debug.Log("Está adicionando força!");
             }
             else 
             {
                 Boss.AddForce(Vector2.up * JumpForce + Vector2.right * BossVelocity, ForceMode2D.Impulse);
-                Debug.Log("Está adicionando força!");
+                //Debug.Log("Está adicionando força!");
             }
 
             nextJumpTime = Time.time + JumpCooldown;
@@ -91,7 +91,7 @@ public class BossFight : MonoBehaviour
     //Neste turno o boss irá parar e começará a lançar diversos projetéis
     void SecondRotation()
     {
-        Debug.Log("Está vindo aqui");
+       // Debug.Log("Está vindo aqui");
         if (Time.time - lastShot < ShootCoolDown)
         {
             return;
