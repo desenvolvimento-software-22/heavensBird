@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor.VersionControl;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class EnemyAttack : MonoBehaviour
     public float cooldown;
     private float lastShot;
     public float strength = 70.0f;
-
+    public float minShootDist = 9f;
+    private Vector2 distance;
     void Start()
     {
         enemy = GetComponent<Rigidbody2D>();
@@ -24,8 +26,8 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float difference = Mathf.Abs(player.position.x - enemy.position.x);
-        if (enemy.GetComponent<EnemyMovement>().inRange() && difference >= 7f)
+        distance = enemy.position - player.position;
+        if (enemy.GetComponent<EnemyMovement>().CanAttack() && Mathf.Abs(distance.x) >= minShootDist)
         {
             Shoot();
         }
@@ -39,26 +41,8 @@ public class EnemyAttack : MonoBehaviour
     }
     void Attack()
     {
-        float difference;
-        if (enemy.position.x > player.position.x)
-        {
-            difference = -1;
-        }
-        else
-        {
-            difference = 1;
-        }
-            
-        if (difference < 0)
-        {
-            anim.SetFloat("RPos", 1);
-        }
-        else
-        {
-            anim.SetFloat("RPos", -1);
-        }
+        anim.SetFloat("RPos", distance.x);
         anim.SetTrigger("Attack");
-        player.AddForce(new Vector3(difference, 0, 0) * strength, ForceMode2D.Impulse);
     }
 
     void Shoot()
@@ -69,23 +53,7 @@ public class EnemyAttack : MonoBehaviour
         }
         lastShot = Time.time;
 
-        float difference;
-        if (enemy.position.x > player.position.x)
-        {
-            difference = -1;
-        }
-        else
-        {
-            difference = 1;
-        }
-        if (difference < 0)
-        {
-            anim.SetFloat("RPos", 1);
-        }
-        else
-        {
-            anim.SetFloat("RPos", -1);
-        }
+        anim.SetFloat("RPos", distance.x);
         anim.SetTrigger("Shoot");
     }
 

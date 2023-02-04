@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float projectileSpeed;
+    public int damageAmount = 1;
     private float timer;
     private GameObject player;
     private Rigidbody2D rb;
@@ -22,7 +23,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        rb.velocity = new Vector2(direction.x / Mathf.Abs(direction.x), 0) * projectileSpeed;
+        rb.velocity = direction.normalized * projectileSpeed;
         timer += Time.deltaTime;
         if (timer > 12)
         {
@@ -32,10 +33,12 @@ public class Projectile : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+
+        if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            collision.gameObject.GetComponent<playerhealth>().takeDamage(damageAmount);
         }
+        Destroy(gameObject);
         
     }
 }
