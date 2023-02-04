@@ -15,7 +15,7 @@ public class EnemyAttack : MonoBehaviour
     public float cooldown;
     private float lastShot;
     public float strength = 70.0f;
-    public float minShootDist = 9f;
+    public float minShootDist = 10f;
     private Vector2 distance;
     void Start()
     {

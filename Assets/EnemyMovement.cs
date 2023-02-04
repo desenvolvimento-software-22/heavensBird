@@ -72,7 +72,7 @@ public class EnemyMovement : MonoBehaviour
 
     public bool isOnTheSamePlatform()
     {
-        return distance.y <= -0.9f && distance.y >= -3.65f; 
+        return distance.y <= -0.9f && distance.y >= -3.75f; 
     }
     public bool CanAttack()
     {
