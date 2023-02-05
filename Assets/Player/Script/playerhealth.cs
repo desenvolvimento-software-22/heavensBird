@@ -60,8 +60,9 @@ public class playerhealth : MonoBehaviour
                 Invoke ("LoadGameOver", 2f);
             }
      }
-     void LoadGameOver()
+     public void LoadGameOver()
      {
+        bgm.Stop();
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
         gameOverSound.Play();
      }
