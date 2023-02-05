@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossProjectile Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 53033239992730272, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 2864805886897046649, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,6 +65,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864805886897046649, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459537073704687403, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459537073704687403, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
+      propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -149,4 +161,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 587f9aec672ac4448954db735b6d8184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 0
+  projectileSpeed: 10

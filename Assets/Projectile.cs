@@ -17,7 +17,9 @@ public class Projectile : MonoBehaviour
 
         direction = player.transform.position - transform.position;
         float rot = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, rot + 180);
+        //transform.rotation = Quaternion.Euler(0, 0, rot + 180);
+        // Obs (Mateus): Desativei esta funcao pois estava dando problema
+        // com o projetil do boss
     }
     // Update is called once per frame
     private void Update()
@@ -36,6 +38,6 @@ public class Projectile : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+
     }
 }
