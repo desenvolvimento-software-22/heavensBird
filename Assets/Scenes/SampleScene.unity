@@ -3448,13 +3448,14 @@ MonoBehaviour:
   jumpSound: {fileID: 1239619005}
   attackSoundVoice: {fileID: 1239619007}
   attackSoundSword: {fileID: 1239619006}
+  gameOverSound: {fileID: 1239619009}
   JumpForce: 15.5
   isJumping: 0
   dash: {fileID: 1239619000}
   isAlive: 1
   attackPoint: {fileID: 463748398}
   attackPoint_esquerda: {fileID: 1898180833}
-  attackRange: 0.5
+  attackRange: 0.9
   enemyLayers:
     serializedVersion: 2
     m_Bits: 8
