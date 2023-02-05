@@ -105,7 +105,7 @@ public class Player : MonoBehaviour
         //Função temporária teste para a morte da personagem no void
         if(collision.gameObject.layer == 7)
         {
-            Invoke("ReloadLevel", 0f);
+            this.GetComponent<playerhealth>().LoadGameOver();
         }
             
     }

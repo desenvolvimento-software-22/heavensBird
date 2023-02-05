@@ -7,8 +7,10 @@ public class BossFight : MonoBehaviour
 {
     private Rigidbody2D Boss;
     public GameObject Player;
+    private Rigidbody2D rbPlayer;
     public Transform firePoint;
     public GameObject projectile;
+    SpriteRenderer sr;
     private bool BossAlive = true;
     public float JumpForce = 200f, BossVelocity = 3f;
     private Vector3 distance;
@@ -16,17 +18,23 @@ public class BossFight : MonoBehaviour
 
     //Variáveis do Tempo de CooldDown do Pulo
     public float nextJumpTime = 0f;
-    public float JumpCooldown = 2f;
+    public float JumpCooldown = 3f;
 
     public float ShootCoolDown = 5f;
     private float lastShot;
     private Animator anim;
+    float difference;
 
     // Start is called before the first frame update
     void Start()
     {
         Boss = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        rbPlayer = Player.GetComponent<Rigidbody2D>();
+
+        nextJumpTime = Time.time + JumpCooldown;
+
+        sr = projectile.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,6 +42,7 @@ public class BossFight : MonoBehaviour
     {
         if (this.GetComponent<healthEnemy>().health <= 0)
         {
+            Debug.Log("O Boss Está Morto!");
             BossAlive = false;
             this.enabled = false;
         }
@@ -45,10 +54,6 @@ public class BossFight : MonoBehaviour
             FirstRotation();
             SecondRotation();
             //}
-        }
-        else
-        {
-            Debug.Log("O Boss Está Morto!");
         }
     }
 
@@ -93,6 +98,10 @@ public class BossFight : MonoBehaviour
 
             nextJumpTime = Time.time + JumpCooldown;
         }
+        else 
+        {
+        anim.SetTrigger("startJump");
+        }
     }
 
 
@@ -105,12 +114,39 @@ public class BossFight : MonoBehaviour
         {
             return;
         }
+        sr.flipX = false;
         lastShot = Time.time;
+
+        if (Boss.position.x > rbPlayer.position.x)
+        {
+            difference = -1;
+        }
+        else
+        {
+            difference = 1;
+        }
+
+        if (difference < 0)
+        {
+            sr.flipX = true;
+        }
+        else
+        {
+            sr.flipX = false;
+        }
+
         anim.SetTrigger("Shoot");
+
+        anim.SetTrigger("startJump");
     }
 
     void createProjectile()
     {
         Instantiate(projectile, firePoint.position, Quaternion.identity);
+    }
+
+    void projectileTrueSide()
+    {
+        sr.flipX = false;
     }
 }
