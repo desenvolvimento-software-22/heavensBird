@@ -34,6 +34,10 @@ public class EnemyAttack : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) 
     {
+        if (collision.gameObject.layer == 7)
+        {
+            Destroy(gameObject);
+        }
         if (collision.gameObject.CompareTag("Player"))
         {
             Attack();
