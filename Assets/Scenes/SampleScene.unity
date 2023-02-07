@@ -1036,7 +1036,7 @@ GameObject:
   - component: {fileID: 125429291}
   m_Layer: 3
   m_Name: Slime (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1111,6 +1111,7 @@ MonoBehaviour:
   projectile: {fileID: 8730003018402851302, guid: f6835799171ad9541b1a50a3f0a55509, type: 3}
   cooldown: 1.5
   strength: 70
+  minShootDist: 10
 --- !u!61 &125429286
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1151,7 +1152,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1562,7 +1563,7 @@ GameObject:
   - component: {fileID: 160754788}
   m_Layer: 3
   m_Name: Slime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1621,6 +1622,7 @@ MonoBehaviour:
   projectile: {fileID: 8730003018402851302, guid: f6835799171ad9541b1a50a3f0a55509, type: 3}
   cooldown: 1.5
   strength: 70
+  minShootDist: 9
 --- !u!61 &160754782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5283,6 +5285,7 @@ MonoBehaviour:
   projectile: {fileID: 8730003018402851302, guid: f6835799171ad9541b1a50a3f0a55509, type: 3}
   cooldown: 1.5
   strength: 70
+  minShootDist: 10
 --- !u!61 &681310358
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10960,7 +10963,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956789011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.015, y: 0.19, z: 0}
+  m_LocalPosition: {x: 0.0073, y: 0.1982, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28651,7 +28654,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625819238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.015, y: 0.19, z: 0}
+  m_LocalPosition: {x: 0.008, y: 0.207, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83029,7 +83032,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1948622814}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 851503f3276b46c4a9762ab72327812a, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
