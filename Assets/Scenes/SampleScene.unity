@@ -187,7 +187,7 @@ MonoBehaviour:
   profile: {fileID: 1179328289}
   speechText: {fileID: 2030461390}
   actorNameText: {fileID: 1444384858}
-  typingSpeed: 0.05
+  typingSpeed: 0
 --- !u!4 &57487125
 Transform:
   m_ObjectHideFlags: 0
