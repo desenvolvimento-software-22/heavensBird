@@ -25,6 +25,8 @@ public class BossFight : MonoBehaviour
     private Animator anim;
     float difference;
 
+    SpriteRenderer srBoss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,8 @@ public class BossFight : MonoBehaviour
         nextJumpTime = Time.time + JumpCooldown;
 
         sr = projectile.GetComponent<SpriteRenderer>();
+
+        srBoss = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -100,7 +104,7 @@ public class BossFight : MonoBehaviour
         }
         else 
         {
-        anim.SetTrigger("startJump");
+            anim.SetTrigger("startJump");
         }
     }
 
@@ -129,6 +133,7 @@ public class BossFight : MonoBehaviour
         if (difference < 0)
         {
             sr.flipX = true;
+            srBoss.flipX = true;
         }
         else
         {
@@ -148,5 +153,21 @@ public class BossFight : MonoBehaviour
     void projectileTrueSide()
     {
         sr.flipX = false;
+        srBoss.flipX = false;
+    }
+
+    // Funcao para trocar o Boss para a layer em q
+    // ele n toma dano
+    public void MudarLayer()
+    {
+        gameObject.layer = 10;
+    }
+
+    // Funcao para fazer o Boss voltar para a layer em
+    // q ele n toma dano
+    public void RetornarLayer()
+    {
+        gameObject.layer = 3;
+        Debug.Log("Troca A layer de volta");
     }
 }

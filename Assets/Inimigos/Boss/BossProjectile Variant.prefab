@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8459537073704687403, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
 --- !u!1 &690569980859924538 stripped
