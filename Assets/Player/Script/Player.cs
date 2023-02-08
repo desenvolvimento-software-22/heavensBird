@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         this.direction = Direction.Right;
@@ -177,4 +178,13 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);    
     }
 
+    public void StopPlayer()
+    {
+        rig.bodyType = RigidbodyType2D.Static;
+    }
+
+    // public void StopPlayer()
+    // {
+    //     this.GetComponent<Player>().enabled = false;
+    // }
 }

@@ -15,11 +15,15 @@ public class Dialogue : MonoBehaviour
     private Animator anim;
     bool onRadious;
     private bool executar = true;
-
+    public bool wall;
+    public bool wall2;
+    
     private void Start()
     {
         dc = FindObjectOfType<DialogueControl>();
         anim = GetComponent<Animator>();
+        wall = GameObject.Find("parede1").active = false; 
+        wall2 = GameObject.Find("parede2").active = false;
     }
 
     private void FixedUpdate()
@@ -29,14 +33,19 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && onRadious && executar == true)
+        if(Input.GetKeyDown(KeyCode.Space) && onRadious && executar)
         {
             dc.Speech(profile, speechTxt, actorName);
             executar = false;
+            wall = GameObject.Find("parede1").active = true;
+            wall2 = GameObject.Find("parede2").active = true;
         }
-        if(executar == false)
+        else if(executar == false && dc.speechText.text == "")
         {
-            KnightDeath(); 
+            KnightDeath();
+            anim.SetTrigger("deathk");
+            wall = GameObject.Find("parede1").active =false;
+            wall2 = GameObject.Find("parede2").active = false;
         }
     }
 
@@ -61,7 +70,7 @@ public class Dialogue : MonoBehaviour
 
     public void KnightDeath()
     {
-            anim.SetTrigger("deathk");
-            this.GetComponent<Dialogue>().enabled = false;
+        
+        this.GetComponent<Dialogue>().enabled = false;
     }
 }
