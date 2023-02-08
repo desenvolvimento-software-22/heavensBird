@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump") && !isJumping)
+        if((Input.GetButtonDown("Jump") || Input.GetKeyDown("space")) && !isJumping)
         {
             rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
