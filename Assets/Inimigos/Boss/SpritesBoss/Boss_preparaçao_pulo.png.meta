@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 562baa8b3a2971341851c7532f58427d
+guid: f07fb74ccc9cc5e4e86c964d5f155c43
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,148 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime_attack1_direita_0
+      name: "Boss_prepara\xE7ao_pulo_0"
       rect:
         serializedVersion: 2
-        x: 182
+        x: 13
         y: 0
-        width: 21
-        height: 17
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6be872771c0935149ac4fb08577d05bf
-      internalID: 1377696359
+      spriteID: 22a72ddae75a1c747933140562b6c543
+      internalID: -1133506143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_attack1_direita_1
+      name: "Boss_prepara\xE7ao_pulo_2"
       rect:
         serializedVersion: 2
-        x: 241
+        x: 221
         y: 0
-        width: 32
-        height: 21
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 87
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d57bcaf966dddcc45b0e22e6688c91a7
-      internalID: 866761000
+      spriteID: 81480697b9f261640b78eb63d63f0a69
+      internalID: 266330854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_attack1_direita_2
+      name: "Boss_prepara\xE7ao_pulo_3"
       rect:
         serializedVersion: 2
-        x: 314
-        y: 16
-        width: 13
-        height: 5
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 428
+        y: 0
+        width: 89
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5178535a38ca8b646976d79acb2c14ba
-      internalID: 594964464
+      spriteID: c00bbac8d39f78a4abd19e0e4ab72d7f
+      internalID: -1749811441
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_attack1_direita_3
+      name: "Boss_prepara\xE7ao_pulo_5"
       rect:
         serializedVersion: 2
-        x: 4
+        x: 640
         y: 0
-        width: 20
-        height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 86
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6f2acc22efd9444cb33959dcea05429
-      internalID: -1561900547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_attack1_direita_4
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 0
-        width: 19
-        height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1a67a4c27d93d844ab73efcaec973e5
-      internalID: -1185374754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_attack1_direita_5
-      rect:
-        serializedVersion: 2
-        x: 121
-        y: 0
-        width: 20
-        height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 959f195097694a848b5193a52bf8349b
-      internalID: 1991992790
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_attack1_direita_6
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 31
-        height: 12
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f29bed5b62422f54eb498d5dbdcd3851
-      internalID: -1576159384
+      spriteID: 522694f4023604e4382f906d2aa16bc6
+      internalID: -927310764
       vertices: []
       indices: 
       edges: []
@@ -274,13 +211,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slime_attack1_direita_1: 866761000
-      slime_attack1_direita_0: 1377696359
-      slime_attack1_direita_6: -1576159384
-      slime_attack1_direita_5: 1991992790
-      slime_attack1_direita_2: 594964464
-      slime_attack1_direita_3: -1561900547
-      slime_attack1_direita_4: -1185374754
+      "Boss_prepara\xE7ao_pulo_3": -1749811441
+      "Boss_prepara\xE7ao_pulo_2": 266330854
+      "Boss_prepara\xE7ao_pulo_4": 1898024529
+      "Boss_prepara\xE7ao_pulo_5": -927310764
+      "Boss_prepara\xE7ao_pulo_1": -2102650420
+      "Boss_prepara\xE7ao_pulo_0": -1133506143
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

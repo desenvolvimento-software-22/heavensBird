@@ -113,11 +113,7 @@ public class Player : MonoBehaviour
         //Função temporária teste para a morte da personagem no void
         if(collision.gameObject.layer == 7)
         {
-            anim.SetBool("death", true);
-            rig.bodyType = RigidbodyType2D.Static;
-            this.GetComponent<Player>().enabled=false;
-            this.GetComponent<playerhealth>().LoadGameOver();
-            
+            Invoke("ReloadLevel", 0f);
         }
             
     }
