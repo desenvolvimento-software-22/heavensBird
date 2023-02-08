@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    private Rigidbody2D rb;
     public Sprite profile;
     public string[] speechTxt;
     public string actorName;
@@ -17,12 +16,12 @@ public class Dialogue : MonoBehaviour
     bool onRadious;
     private bool executar = true;
 
+    public GameObject player;
+
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         dc = FindObjectOfType<DialogueControl>();
         anim = GetComponent<Animator>();
-        this.GetComponent<Player>().enabled=false;
     }
 
     private void FixedUpdate()
@@ -35,13 +34,13 @@ public class Dialogue : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && onRadious && executar == true)
         {
             dc.Speech(profile, speechTxt, actorName);
+            player.GetComponent<Player>().enabled = false;
             executar = false;
-            StopPlayer();
         }
         if(executar == false && dc.speechText.text == "")
         {
-            //KnightDeath(); 
             anim.SetTrigger("deathk");
+            player.GetComponent<Player>().enabled = true;
         }
     }
 
@@ -62,17 +61,6 @@ public class Dialogue : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireSphere(transform.position, radious);
-    }
-
-    // public void KnightDeath()
-    // {
-    //         anim.SetTrigger("deathk");
-    //         this.GetComponent<Dialogue>().enabled = false;
-    // }
-
-    public void StopPlayer()
-    {
-        rb.bodyType = RigidbodyType2D.Static;
     }
 
 }
