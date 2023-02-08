@@ -21,11 +21,13 @@ public class BossFight : MonoBehaviour
     public float JumpCooldown = 3f;
 
     public float ShootCoolDown = 5f;
-    private float lastShot;
+    private float lastShot = 0f;
     private Animator anim;
     float difference;
 
     SpriteRenderer srBoss;
+
+    bool canJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -54,8 +56,10 @@ public class BossFight : MonoBehaviour
         {
             //if (FightStart() == true)
             //{
-            
-            FirstRotation();
+            if (canJump)
+            {
+                FirstRotation();
+            }
             SecondRotation();
             //}
         }
@@ -114,19 +118,22 @@ public class BossFight : MonoBehaviour
     void SecondRotation()
     {
        // Debug.Log("Está vindo aqui");
-        if (Time.time - lastShot < ShootCoolDown)
+        if (Time.time - lastShot < ShootCoolDown || Boss.velocity.y != 0f)
         {
             return;
         }
+        canJump = false;
         sr.flipX = false;
         lastShot = Time.time;
 
         if (Boss.position.x > rbPlayer.position.x)
         {
+            // Boss está na esquerda do player
             difference = -1;
         }
         else
         {
+            // Boss está na direita do player
             difference = 1;
         }
 
@@ -134,10 +141,12 @@ public class BossFight : MonoBehaviour
         {
             sr.flipX = true;
             srBoss.flipX = true;
+            //Debug.Log("Atirar na esquerda");
         }
         else
         {
             sr.flipX = false;
+            //Debug.Log("Atirar na direita");
         }
 
         anim.SetTrigger("Shoot");
@@ -154,6 +163,7 @@ public class BossFight : MonoBehaviour
     {
         sr.flipX = false;
         srBoss.flipX = false;
+        canJump = true;
     }
 
     // Funcao para trocar o Boss para a layer em q
