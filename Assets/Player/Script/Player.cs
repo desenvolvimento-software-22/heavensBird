@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
     // essa variável serve para controlar a velocidade na qual o personagem se movimenta
     public float speed;
     public SpriteRenderer spriteRenderer;
+
     
     //controlar audios
     public AudioSource jumpSound;
     public AudioSource attackSoundVoice;
     public AudioSource attackSoundSword;
+    public AudioSource gameOverSound;
     
     
     // essa variável serve para controlarmos a gravidade do personagem
@@ -88,13 +90,12 @@ public class Player : MonoBehaviour
        } else if (velocidade.x == 0) {
         anim.SetBool("run", false);
        }
-       
 
     }
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump") && !isJumping)
+        if((Input.GetButtonDown("Jump") || Input.GetKeyDown("space")) && !isJumping)
         {
             rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);

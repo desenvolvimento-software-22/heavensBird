@@ -51,16 +51,18 @@ public class playerhealth : MonoBehaviour
             
             if(health <= 0)
             {
-            isAlive = false;
-            bgm.Stop();
-            anim.SetBool("death", true);
-            rb.bodyType = RigidbodyType2D.Static;
-            this.GetComponent<Player>().enabled=false;
-            Invoke ("LoadGameOver", 2f);
+                isAlive = false;
+                bgm.Stop();
+                anim.SetBool("death", true);
+                rb.bodyType = RigidbodyType2D.Static;
+                this.GetComponent<Player>().enabled=false;
+                this.GetComponent<CapsuleCollider2D>().enabled = false;
+                Invoke ("LoadGameOver", 2f);
             }
      }
-     void LoadGameOver()
+     public void LoadGameOver()
      {
+        bgm.Stop();
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
         gameOverSound.Play();
      }
