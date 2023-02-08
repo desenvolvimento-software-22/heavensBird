@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 53033239992730272, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2864805886897046649, guid: 5e09afaed1c90144d9fa45b0c280f79b, type: 3}
       propertyPath: m_RootOrder
@@ -166,4 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 10
+  damageAmount: 1
   isBoss: 1

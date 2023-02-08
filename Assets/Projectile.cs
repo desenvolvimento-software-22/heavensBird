@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float projectileSpeed;
+    public int damageAmount = 1;
     private float timer;
     private GameObject player;
     private Rigidbody2D rb;
@@ -24,7 +25,7 @@ public class Projectile : MonoBehaviour
         
         if (isBoss == false)
         {
-            transform.rotation = Quaternion.Euler(0, 0, rot + 180);
+            transform.rotation = Quaternion.Euler(0, 0, rot + 177);
         }
     }
     // Update is called once per frame
@@ -40,10 +41,12 @@ public class Projectile : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(!collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
 
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<playerhealth>().takeDamage(damageAmount);
+        }
+        Destroy(gameObject);
+        
     }
 }
