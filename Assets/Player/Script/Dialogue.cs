@@ -22,8 +22,6 @@ public class Dialogue : MonoBehaviour
     {
         dc = FindObjectOfType<DialogueControl>();
         anim = GetComponent<Animator>();
-        wall = GameObject.Find("parede1").active = false; 
-        wall2 = GameObject.Find("parede2").active = false;
     }
 
     private void FixedUpdate()
@@ -38,8 +36,7 @@ public class Dialogue : MonoBehaviour
             dc.Speech(profile, speechTxt, actorName);
             player.GetComponent<Player>().enabled = false;
             executar = false;
-            wall = GameObject.Find("parede1").active = true;
-            wall2 = GameObject.Find("parede2").active = true;
+
         }
         if(executar == false && dc.speechText.text == "")
         {
