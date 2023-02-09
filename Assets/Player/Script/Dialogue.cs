@@ -36,7 +36,6 @@ public class Dialogue : MonoBehaviour
             dc.Speech(profile, speechTxt, actorName);
             player.GetComponent<Player>().enabled = false;
             executar = false;
-
         }
         if(executar == false && dc.speechText.text == "")
         {
