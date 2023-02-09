@@ -14,10 +14,10 @@ TagManager:
   - UI
   - Ground
   - Void
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Projectile
+  - waitTurn
+  - Item
   - 
   - 
   - 

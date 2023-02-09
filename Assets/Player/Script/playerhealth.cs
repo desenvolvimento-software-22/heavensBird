@@ -23,8 +23,13 @@ public class playerhealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (isAlive) {
+       //Verifica em qual scene o player está.
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "SampleScene"){
             bgm.Play();
+        }
+        else {
+            bgm.Stop();
         }
         health = maxHealth;
         anim = GetComponent<Animator>();
@@ -51,11 +56,12 @@ public class playerhealth : MonoBehaviour
             
             if(health <= 0)
             {
-            isAlive = false;
-            anim.SetBool("death", true);
-            rb.bodyType = RigidbodyType2D.Static;
-            this.GetComponent<Player>().enabled=false;
-            Invoke ("LoadGameOver", 2f);
+                isAlive = false;
+                anim.SetBool("death", true);
+                rb.bodyType = RigidbodyType2D.Static;
+                this.GetComponent<Player>().enabled=false;
+                this.GetComponent<CapsuleCollider2D>().enabled = false;
+                Invoke ("LoadGameOver", 2f);
             }
      }
      public void LoadGameOver()
@@ -64,5 +70,6 @@ public class playerhealth : MonoBehaviour
         SceneManager.LoadScene("GameOver", LoadSceneMode.Additive);
         gameOverSound.Play();
      }
+
 }
         
