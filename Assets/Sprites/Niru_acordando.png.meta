@@ -108,12 +108,12 @@ TextureImporter:
       name: Niru_acordando_0
       rect:
         serializedVersion: 2
-        x: 406
+        x: 0
         y: 0
-        width: 16
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,12 +129,12 @@ TextureImporter:
       name: Niru_acordando_1
       rect:
         serializedVersion: 2
-        x: 471
+        x: 65
         y: 0
-        width: 16
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: Niru_acordando_2
       rect:
         serializedVersion: 2
-        x: 536
+        x: 130
         y: 0
-        width: 16
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: Niru_acordando_3
       rect:
         serializedVersion: 2
-        x: 601
+        x: 195
         y: 0
-        width: 16
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +192,12 @@ TextureImporter:
       name: Niru_acordando_4
       rect:
         serializedVersion: 2
-        x: 666
+        x: 260
         y: 0
-        width: 25
+        width: 65
         height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: Niru_acordando_6
       rect:
         serializedVersion: 2
-        x: 731
+        x: 390
         y: 0
-        width: 25
+        width: 65
         height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -234,12 +234,12 @@ TextureImporter:
       name: Niru_acordando_8
       rect:
         serializedVersion: 2
-        x: 796
+        x: 520
         y: 0
-        width: 25
+        width: 65
         height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Niru_acordando_10
       rect:
         serializedVersion: 2
-        x: 861
+        x: 650
         y: 0
-        width: 25
+        width: 65
         height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +276,12 @@ TextureImporter:
       name: Niru_acordando_12
       rect:
         serializedVersion: 2
-        x: 927
+        x: 780
         y: 0
-        width: 15
-        height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +297,12 @@ TextureImporter:
       name: Niru_acordando_13
       rect:
         serializedVersion: 2
-        x: 3
+        x: 845
         y: 0
-        width: 31
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: Niru_acordando_14
       rect:
         serializedVersion: 2
-        x: 68
+        x: 910
         y: 0
-        width: 31
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,85 +336,85 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Niru_acordando_15
+      name: Niru_acordando_5
       rect:
         serializedVersion: 2
-        x: 133
+        x: 325
         y: 0
-        width: 31
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e02a9e2ed9f32ca4dad1c58c7b5653b4
-      internalID: -101399635
+      spriteID: 7d011fbc3432de14492215880e5dfc6c
+      internalID: 1076093777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Niru_acordando_16
+      name: Niru_acordando_7
       rect:
         serializedVersion: 2
-        x: 198
+        x: 455
         y: 0
-        width: 31
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a17ee6a7aba6a24ba8761de78ecc036
-      internalID: 691577436
+      spriteID: b87454464fc1e35448425c87947ffb6e
+      internalID: -1734210196
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Niru_acordando_17
+      name: Niru_acordando_9
       rect:
         serializedVersion: 2
-        x: 262
+        x: 585
         y: 0
-        width: 32
-        height: 11
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 337705bb6bd9a6043b65d10f2a47c29e
-      internalID: -257491932
+      spriteID: 28edb0ab78c7dd5429f92134cc8f5c3f
+      internalID: 317407331
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Niru_acordando_18
+      name: Niru_acordando_11
       rect:
         serializedVersion: 2
-        x: 335
+        x: 715
         y: 0
-        width: 22
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8419de626c2f9864b989733728a36dfb
-      internalID: -1238563157
+      spriteID: 560100c180481b348b39823955a669ef
+      internalID: 709773966
       vertices: []
       indices: 
       edges: []
@@ -433,10 +433,8 @@ TextureImporter:
       Niru_acordando_10: 425071027
       Niru_acordando_5: 1076093777
       Niru_acordando_14: -164067851
-      Niru_acordando_15: -101399635
       Niru_acordando_8: -1881279888
       Niru_acordando_9: 317407331
-      Niru_acordando_17: -257491932
       Niru_acordando_4: 1461297697
       Niru_acordando_7: -1734210196
       Niru_acordando_0: -1830716731
@@ -444,8 +442,6 @@ TextureImporter:
       Niru_acordando_1: -1410697826
       Niru_acordando_2: -1832907615
       Niru_acordando_3: -2021541435
-      Niru_acordando_18: -1238563157
-      Niru_acordando_16: 691577436
       Niru_acordando_6: 1733908907
       Niru_acordando_11: 709773966
       Niru_acordando_12: 1966840896
