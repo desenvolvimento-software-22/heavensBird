@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (inRange())
+        if (CanAttack() && Player.GetComponent<playerhealth>().isAlive)
         {
             // Move towards the player
             if (distance.x > 0)
@@ -67,6 +67,15 @@ public class EnemyMovement : MonoBehaviour
 
     public bool inRange()
     {
-        return Mathf.Abs(distance.x) <= minDist && Math.Abs(distance.y) <= 2 && distance.y < 0;
+        return Mathf.Abs(distance.x) <= minDist;
+    }
+
+    public bool isOnTheSamePlatform()
+    {
+        return distance.y <= -0.9f && distance.y >= -3.75f; 
+    }
+    public bool CanAttack()
+    {
+        return inRange() && isOnTheSamePlatform();
     }
 }

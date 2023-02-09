@@ -15,9 +15,9 @@ public class Dialogue : MonoBehaviour
     private Animator anim;
     bool onRadious;
     private bool executar = true;
-    public bool wall;
-    public bool wall2;
-    
+
+    public GameObject player;
+
     private void Start()
     {
         dc = FindObjectOfType<DialogueControl>();
@@ -36,16 +36,15 @@ public class Dialogue : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space) && onRadious && executar)
         {
             dc.Speech(profile, speechTxt, actorName);
+            player.GetComponent<Player>().enabled = false;
             executar = false;
             wall = GameObject.Find("parede1").active = true;
             wall2 = GameObject.Find("parede2").active = true;
         }
-        else if(executar == false && dc.speechText.text == "")
+        if(executar == false && dc.speechText.text == "")
         {
-            KnightDeath();
             anim.SetTrigger("deathk");
-            wall = GameObject.Find("parede1").active =false;
-            wall2 = GameObject.Find("parede2").active = false;
+            player.GetComponent<Player>().enabled = true;
         }
     }
 
@@ -68,9 +67,7 @@ public class Dialogue : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radious);
     }
 
-    public void KnightDeath()
-    {
-        
-        this.GetComponent<Dialogue>().enabled = false;
-    }
 }
+
+
+

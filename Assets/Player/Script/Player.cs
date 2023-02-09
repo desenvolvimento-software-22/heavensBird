@@ -8,6 +8,14 @@ public class Player : MonoBehaviour
     // essa variável serve para controlar a velocidade na qual o personagem se movimenta
     public float speed;
     public SpriteRenderer spriteRenderer;
+
+    
+    //controlar audios
+    public AudioSource jumpSound;
+    public AudioSource attackSoundVoice;
+    public AudioSource attackSoundSword;
+    public AudioSource gameOverSound;
+    
     
     // essa variável serve para controlarmos a gravidade do personagem
     private Rigidbody2D rig;
@@ -56,7 +64,6 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-
        float horizontal = Input.GetAxis("Horizontal");
        Vector2 velocidade = this.rig.velocity;
        velocidade.x = horizontal * this.speed;
@@ -83,7 +90,6 @@ public class Player : MonoBehaviour
        } else if (velocidade.x == 0) {
         anim.SetBool("run", false);
        }
-       
 
     }
 
@@ -93,6 +99,7 @@ public class Player : MonoBehaviour
         {
             rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
+            jumpSound.Play();
         }
     }
     void OnCollisionEnter2D(Collision2D collision)
@@ -106,7 +113,11 @@ public class Player : MonoBehaviour
         //Função temporária teste para a morte da personagem no void
         if(collision.gameObject.layer == 7)
         {
-            Invoke("ReloadLevel", 0f);
+            anim.SetBool("death", true);
+            rig.bodyType = RigidbodyType2D.Static;
+            this.GetComponent<Player>().enabled=false;
+            this.GetComponent<playerhealth>().LoadGameOver();
+            
         }
             
     }
@@ -131,7 +142,8 @@ public class Player : MonoBehaviour
             {
                 // Animação de ataque
                 anim.SetTrigger("attack");
-
+                attackSoundVoice.Play();
+                attackSoundSword.Play();
 
                 if (swordSide == true)
                 {
@@ -162,6 +174,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+    //metodo para aplicação do dash
     private void DashAplic(){
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             this.dash.Aplicate(this.direction);
