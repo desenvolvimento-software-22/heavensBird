@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class healthEnemy : MonoBehaviour
 {
@@ -38,5 +39,9 @@ public class healthEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-
+    public void LoadFinalScene()
+    {
+        GameObject.Find("Player").SetActive(false);
+        SceneManager.LoadScene("CutsceneFinal", LoadSceneMode.Additive);
+    }
 }

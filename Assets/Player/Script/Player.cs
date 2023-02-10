@@ -63,7 +63,6 @@ public class Player : MonoBehaviour
 
     void Move()
     {
-
        float horizontal = Input.GetAxis("Horizontal");
        Vector2 velocidade = this.rig.velocity;
        velocidade.x = horizontal * this.speed;
@@ -113,9 +112,9 @@ public class Player : MonoBehaviour
         //Função temporária teste para a morte da personagem no void
         if(collision.gameObject.layer == 7)
         {
-            Invoke("ReloadLevel", 0f);
+            GetComponent<playerhealth>().takeDamage(3);
+
         }
-            
     }
 
      void ReloadLevel()
@@ -162,10 +161,8 @@ public class Player : MonoBehaviour
                     foreach(Collider2D enemy in hitEnemies)
                     {
                         enemy.GetComponent<healthEnemy>().TakeDamage(attackDamage);
-
                     }
                 }
-
                 nextAttackTime = Time.time + 1f/attackRate;
             }
         }
@@ -174,16 +171,13 @@ public class Player : MonoBehaviour
     private void DashAplic(){
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             this.dash.Aplicate(this.direction);
-
         }
     }
-
     //Raio do dano do ataque
     void OnDrawGizmosSelected() 
     {
         if (attackPoint == null)
             return;
-
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);    
     }
 

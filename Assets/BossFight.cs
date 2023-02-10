@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class BossFight : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class BossFight : MonoBehaviour
     private bool BossAlive = true;
     public float JumpForce = 200f, BossVelocity = 3f;
     private Vector3 distance;
+    public AudioSource BossSound;
+    
+    
     //private int Jumps = 0;
 
     //Variáveis do Tempo de CooldDown do Pulo
@@ -24,6 +28,7 @@ public class BossFight : MonoBehaviour
     private float lastShot = 0f;
     private Animator anim;
     float difference;
+    
 
     SpriteRenderer srBoss;
 
@@ -32,6 +37,10 @@ public class BossFight : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "BossFight") {
+            BossSound.Play();
+        }
         Boss = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         rbPlayer = Player.GetComponent<Rigidbody2D>();
@@ -77,6 +86,7 @@ public class BossFight : MonoBehaviour
         if (Player.transform.position.x >= 97)
         {
             return true;
+            
         }
         //Caso ele não esteja
         return false;
