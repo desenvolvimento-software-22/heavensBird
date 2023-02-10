@@ -16,8 +16,10 @@ TagManager:
   - Void
   - Player
   - Dialogue
-  - 
-  - 
+  - Wall
+  - Projectile
+  - waitTurn
+  - Item
   - 
   - 
   - 

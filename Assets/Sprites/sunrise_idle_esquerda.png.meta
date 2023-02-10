@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: beaddf4949bd0504aa34fa9a5cb9a274
+guid: 91f03cad0d2aaf6478f77f3b18641a9c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5ea4a06fb15ed8479f6eb10e1614617
-      internalID: 1703706004
+      spriteID: 0d6d0e1e725d741458b45f7da06acf87
+      internalID: -672385540
       vertices: []
       indices: 
       edges: []
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5abf646f113b3045b341dbaeff042a5
-      internalID: -692503765
+      spriteID: bba3eb06d20266742aa1f7fdecdfbd6c
+      internalID: -1584699482
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98576ae50f346204db0ae9539cc1e5b3
-      internalID: 1556680197
+      spriteID: c9ca9439c71fbc04da33059ef2db0995
+      internalID: 2005163382
       vertices: []
       indices: 
       edges: []
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea8514f5cc3010f418a11a47c3db372d
-      internalID: 188612107
+      spriteID: b06f4908fb606734291089e4f10532e0
+      internalID: -431612955
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sunrise_idle_esquerda_2: 1556680197
-      sunrise_idle_esquerda_1: -692503765
-      sunrise_idle_esquerda_0: 1703706004
-      sunrise_idle_esquerda_3: 188612107
+      sunrise_idle_esquerda_2: 2005163382
+      sunrise_idle_esquerda_1: -1584699482
+      sunrise_idle_esquerda_0: -672385540
+      sunrise_idle_esquerda_3: -431612955
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

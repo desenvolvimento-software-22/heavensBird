@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if(Input.GetButtonDown("Jump") && !isJumping)
+        if((Input.GetButtonDown("Jump") || Input.GetKeyDown("space")) && !isJumping)
         {
             rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
@@ -113,13 +113,9 @@ public class Player : MonoBehaviour
         //Função temporária teste para a morte da personagem no void
         if(collision.gameObject.layer == 7)
         {
-            anim.SetBool("death", true);
-            rig.bodyType = RigidbodyType2D.Static;
-            this.GetComponent<Player>().enabled=false;
-            this.GetComponent<playerhealth>().LoadGameOver();
-            
+            GetComponent<playerhealth>().takeDamage(3);
+
         }
-            
     }
 
      void ReloadLevel()
@@ -166,10 +162,8 @@ public class Player : MonoBehaviour
                     foreach(Collider2D enemy in hitEnemies)
                     {
                         enemy.GetComponent<healthEnemy>().TakeDamage(attackDamage);
-
                     }
                 }
-
                 nextAttackTime = Time.time + 1f/attackRate;
             }
         }
@@ -178,16 +172,13 @@ public class Player : MonoBehaviour
     private void DashAplic(){
         if (Input.GetKeyDown(KeyCode.LeftShift)) {
             this.dash.Aplicate(this.direction);
-
         }
     }
-
     //Raio do dano do ataque
     void OnDrawGizmosSelected() 
     {
         if (attackPoint == null)
             return;
-
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);    
     }
 
