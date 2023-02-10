@@ -69,6 +69,10 @@ public class BossFight : MonoBehaviour
             {
                 FirstRotation();
             }
+            else
+            {
+                MudarLayer();
+            }
             SecondRotation();
             //}
         }
@@ -159,6 +163,8 @@ public class BossFight : MonoBehaviour
             //Debug.Log("Atirar na direita");
         }
 
+        RetornarLayer();
+
         anim.SetTrigger("Shoot");
 
         anim.SetTrigger("startJump");
@@ -178,16 +184,16 @@ public class BossFight : MonoBehaviour
 
     // Funcao para trocar o Boss para a layer em q
     // ele n toma dano
-    /*public void MudarLayer()
+    public void MudarLayer()
     {
         gameObject.layer = 10;
-    }*/
+    }
 
     // Funcao para fazer o Boss voltar para a layer em
     // q ele n toma dano
-    /*public void RetornarLayer()
+    public void RetornarLayer()
     {
         gameObject.layer = 3;
         Debug.Log("Troca A layer de volta");
-    }*/
+    }
 }
