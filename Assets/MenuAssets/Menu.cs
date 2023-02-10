@@ -10,5 +10,6 @@ public class Menu : MonoBehaviour
     public void loadLevelScene()
     {
         SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("cutscene", LoadSceneMode.Additive);
     }
 }
