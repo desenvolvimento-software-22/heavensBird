@@ -31,7 +31,7 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && onRadious && executar)
+        if(Input.GetKeyDown(KeyCode.I) && onRadious && executar)
         {
             dc.Speech(profile, speechTxt, actorName);
             player.GetComponent<Player>().enabled = false;
