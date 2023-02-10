@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,7 +26,7 @@ public class healthEnemy : MonoBehaviour
         if (health <= 0)
         {
             animator.SetTrigger("isDead");
-            
+            this.GetComponent<EnemyDamage>().enabled = false;
         }
         else 
         {
@@ -39,9 +40,20 @@ public class healthEnemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void LoadFinalScene()
+    IEnumerator BossDeath()
     {
-        GameObject.Find("Player").SetActive(false);
-        SceneManager.LoadScene("CutsceneFinal", LoadSceneMode.Additive);
+        this.GetComponent<AudioSource>().enabled = false;
+        yield return new WaitForSeconds(1);
+
+        GameObject canvas = GameObject.Find("Canvas");
+        GameObject child = canvas.transform.GetChild(0).gameObject;
+        child.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+        child.SetActive(false);
+        SceneManager.LoadScene("Creditos", LoadSceneMode.Additive);
+
+        Destroy(gameObject);
+        yield return null;
     }
 }

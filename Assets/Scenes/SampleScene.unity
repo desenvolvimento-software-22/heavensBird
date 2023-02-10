@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 428668270}
-  minDist: 14
+  minDist: 15
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &125429289
@@ -1621,7 +1621,7 @@ MonoBehaviour:
   projectile: {fileID: 8730003018402851302, guid: f6835799171ad9541b1a50a3f0a55509, type: 3}
   cooldown: 1.5
   strength: 70
-  minShootDist: 9
+  minShootDist: 10
 --- !u!61 &160754782
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1683,7 +1683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 240283914}
-  minDist: 10
+  minDist: 15
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &160754785
@@ -3920,7 +3920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 1272828744}
-  minDist: 10
+  minDist: 15
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &466000998
@@ -5345,7 +5345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 11787031}
-  minDist: 10
+  minDist: 15
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &681310361
@@ -89172,7 +89172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1239618993}
   groundDetect: {fileID: 1935963646}
-  minDist: 10
+  minDist: 15
   enemySpeed: 3
   rayDist: 2
 --- !u!212 &2010408769
