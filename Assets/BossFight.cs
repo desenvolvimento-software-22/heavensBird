@@ -71,12 +71,12 @@ public class BossFight : MonoBehaviour
             }
             SecondRotation();
             //}
-            }
-        
         }
+    }
+
     // Função para garantir que o boss só vai começar a se mover
     // quando o player estiver no campo de batalha
-    public bool FightStart() 
+    private bool FightStart() 
     {
         // Se o player estiver dentro do campo delimitado para a batalha
         if (Player.transform.position.x >= 97)
