@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
-public class CutsceneManager : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
     PlayableDirector director;
 
@@ -15,8 +15,9 @@ public class CutsceneManager : MonoBehaviour
     void Update()
     {
         if (director.state != PlayState.Playing)
-        {  
-            SceneManager.UnloadSceneAsync("cutscene");
+        {
+            SceneManager.LoadScene("Creditos", LoadSceneMode.Additive);
+            this.enabled = false;
         }
     }
 }
