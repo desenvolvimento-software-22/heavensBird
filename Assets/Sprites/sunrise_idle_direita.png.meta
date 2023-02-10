@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9f198cde5bc527149aee21480f327c6d
+guid: efbaceeac795f3b4c8f4b668eeba55e3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57593163400c9e24988e6da05948b3d5
-      internalID: -399545587
+      spriteID: 631c564023c23e543a17e02f99e8386c
+      internalID: 22303402
       vertices: []
       indices: 
       edges: []
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdd5e4752ebe7a8449bc6ffa474cacaf
-      internalID: -1836022243
+      spriteID: 03171554521fa884f9ac7230ef2deac3
+      internalID: 188749064
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efc0c50b1a444d84a919e83b6924eb62
-      internalID: -1815492453
+      spriteID: b2e6aec108419be4c95cd55caa8fd5c1
+      internalID: -1738880679
       vertices: []
       indices: 
       edges: []
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4e93ce9d08f0864faf1caacfd85561c
-      internalID: 2024199726
+      spriteID: 90f1d708959f0c14ab47d48130632e9b
+      internalID: -1271497139
       vertices: []
       indices: 
       edges: []
@@ -223,10 +223,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      sunrise_idle_direita_1: -1836022243
-      sunrise_idle_direita_2: -1815492453
-      sunrise_idle_direita_3: 2024199726
-      sunrise_idle_direita_0: -399545587
+      sunrise_idle_direita_1: 188749064
+      sunrise_idle_direita_2: -1738880679
+      sunrise_idle_direita_3: -1271497139
+      sunrise_idle_direita_0: 22303402
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
