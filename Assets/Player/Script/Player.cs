@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
 
     void Jump()
     {
-        if((Input.GetButtonDown("Jump") || Input.GetKeyDown("space")) && !isJumping)
+        if((Input.GetButtonDown("Jump") || Input.GetKeyDown("space")  || Input.GetKeyDown(KeyCode.W)) && !isJumping)
         {
             rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
             anim.SetBool("jump", true);
@@ -169,7 +169,7 @@ public class Player : MonoBehaviour
     }
     //metodo para aplicação do dash
     private void DashAplic(){
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
+        if (Input.GetKeyDown(KeyCode.LeftShift)  || Input.GetKeyDown(KeyCode.I)) {
             this.dash.Aplicate(this.direction);
         }
     }
